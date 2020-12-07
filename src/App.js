@@ -27,8 +27,10 @@ const Boton = styled.button`
 function App() {
 
   // Función para consultar la api
-  const consultarAPI = () => {
-    console.log('consultando...');
+  const consultarAPI = async () => {
+    const api = await fetch('http://breaking-bad-quotes.herokuapp.com/v1/quotes');
+    const frase = await api.json();
+    console.log(frase[0]);
   }
 
   return (
